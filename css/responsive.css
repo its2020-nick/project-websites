@@ -1,0 +1,186 @@
+/* ============================================================
+   responsive.css — Media queries for mobile/tablet
+   Breakpoints: 320px, 480px, 768px, 1024px, 1280px
+   ============================================================ */
+
+/* ===== 1024px and below — Tablet ===== */
+@media (max-width: 1024px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .footer-brand {
+    grid-column: 1 / -1;
+  }
+
+  .nav-links a {
+    padding: 0.45rem 0.65rem;
+    font-size: 0.84rem;
+  }
+}
+
+/* ===== 768px and below — Small Tablet / Large Mobile ===== */
+@media (max-width: 768px) {
+  :root { --nav-height: 62px; }
+
+  /* Nav */
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+
+  /* Hero */
+  .page-hero {
+    padding: 3.5rem 0 2.5rem;
+  }
+
+  /* Stats bar */
+  .stat-item {
+    min-width: 120px;
+    padding: 0.5rem 1rem;
+  }
+
+  .stat-number { font-size: 1.6rem; }
+
+  /* Cards */
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cards-grid-4 {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+
+  /* Footer */
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+  }
+
+  .footer-brand { grid-column: auto; }
+
+  /* Form */
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  /* Steps */
+  .steps-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* Map */
+  .map-wrapper iframe {
+    height: 280px;
+  }
+
+  /* Sections */
+  .section { padding: 3rem 0; }
+
+  /* Gallery */
+  .gallery-strip {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Level tabs */
+  .level-tabs {
+    gap: 0.4rem;
+  }
+
+  .level-tab {
+    font-size: 0.82rem;
+    padding: 0.45rem 0.9rem;
+  }
+
+  /* Two-col layout helpers */
+  .two-col {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ===== 480px and below — Mobile ===== */
+@media (max-width: 480px) {
+  /* Typography */
+  h1 { font-size: 1.7rem; }
+  h2 { font-size: 1.4rem; }
+
+  /* Nav logo text — hide subtitle on very small screens */
+  .nav-logo-text .school-sub { display: none; }
+
+  /* Stat bar — stack vertically */
+  .stat-bar .container {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .stat-item {
+    border-right: none;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    padding: 0.5rem 1rem;
+    min-width: unset;
+  }
+
+  .stat-item:last-child { border-bottom: none; }
+
+  /* Gallery */
+  .gallery-strip { grid-template-columns: 1fr; }
+
+  /* Steps */
+  .steps-grid { grid-template-columns: 1fr; }
+
+  /* Cards */
+  .cards-grid-4 {
+    grid-template-columns: 1fr;
+  }
+
+  /* Container padding */
+  .container { padding: 0 1rem; }
+
+  /* Button */
+  .btn { font-size: 0.92rem; padding: 0.7rem 1.4rem; }
+
+  /* Contact info grid */
+  .contact-info-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Section */
+  .section { padding: 2.5rem 0; }
+
+  /* Page hero */
+  .page-hero { padding: 3rem 0 2rem; }
+
+  /* Table — horizontal scroll hint */
+  .table-wrap { margin: 0 -1rem; border-radius: 0; }
+}
+
+/* ===== 320px — Very small mobile ===== */
+@media (max-width: 320px) {
+  .nav-logo-text .school-name {
+    font-size: 0.78rem;
+  }
+
+  h1 { font-size: 1.45rem; }
+
+  .btn { padding: 0.65rem 1.1rem; font-size: 0.88rem; }
+}
+
+/* ===== 1280px and above — Wide desktop ===== */
+@media (min-width: 1280px) {
+  .cards-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .cards-grid-4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* ===== Print styles ===== */
+@media print {
+  .navbar, .footer, .hamburger, .lang-toggle, .mobile-nav { display: none !important; }
+  body { color: #000; }
+  a { color: #000; }
+  .page-hero { background: #f5f5f5 !important; color: #000 !important; padding: 1rem; }
+  .page-hero h1 { color: #000 !important; }
+}

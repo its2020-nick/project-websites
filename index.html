@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Wekan Kasarani School, Mwiki — Quality CBC education in Kasarani, Nairobi. Nurturing excellence and building character from Pre-Primary to Junior Secondary." />
+  <meta property="og:title" content="Wekan Kasarani School, Mwiki" />
+  <meta property="og:description" content="Nurturing Excellence, Building Character — CBC School in Kasarani, Nairobi." />
+  <meta property="og:type" content="website" />
+  <title>Wekan Kasarani School, Mwiki — Home</title>
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    /* ---- Hero ---- */
+    .hero {
+      position: relative;
+      min-height: 88vh;
+      display: flex;
+      align-items: center;
+      background: linear-gradient(135deg, var(--bg-dark) 0%, #2e1e00 60%, #1a1200 100%);
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 30% 50%, rgba(255,215,0,0.13) 0%, transparent 65%),
+                  radial-gradient(ellipse at 80% 20%, rgba(255,215,0,0.07) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    /* Decorative circles */
+    .hero::after {
+      content: '';
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      border: 2px solid rgba(255,215,0,0.07);
+      right: -100px;
+      top: -100px;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 700px;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(255,215,0,0.12);
+      border: 1px solid rgba(255,215,0,0.3);
+      color: var(--primary);
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      font-size: 0.82rem;
+      padding: 0.4rem 1rem;
+      border-radius: 99px;
+      margin-bottom: 1.5rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      color: var(--text-light);
+      font-size: clamp(2rem, 5.5vw, 3.5rem);
+      margin-bottom: 0.3rem;
+      line-height: 1.15;
+    }
+
+    .hero h1 span {
+      color: var(--primary);
+    }
+
+    .hero-subtitle {
+      font-size: clamp(1rem, 2.5vw, 1.3rem);
+      color: rgba(255,255,255,0.75);
+      margin-bottom: 2.2rem;
+      font-style: italic;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    /* ---- Welcome section ---- */
+    .welcome-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .welcome-image-wrap {
+      position: relative;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      aspect-ratio: 4/3;
+      background: linear-gradient(135deg, var(--accent) 0%, #ffe87e 100%);
+    }
+
+    .welcome-image-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .welcome-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      color: var(--primary-deeper);
+      font-size: 4rem;
+    }
+
+    .welcome-placeholder p {
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--primary-deeper);
+      margin: 0;
+    }
+
+    .welcome-badge {
+      position: absolute;
+      bottom: 1.5rem;
+      right: 1.5rem;
+      background: var(--primary);
+      color: var(--bg-dark);
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: 0.82rem;
+      padding: 0.6rem 1rem;
+      border-radius: var(--radius);
+      text-align: center;
+      line-height: 1.3;
+    }
+
+    .welcome-text blockquote {
+      border-left: 4px solid var(--primary);
+      padding-left: 1.2rem;
+      margin: 1.5rem 0;
+      font-style: italic;
+      color: #555;
+    }
+
+    .welcome-signature {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-top: 1.5rem;
+    }
+
+    .signature-avatar {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      color: var(--bg-dark);
+      flex-shrink: 0;
+    }
+
+    .signature-info .name {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--primary-deeper);
+    }
+
+    .signature-info .title {
+      font-size: 0.82rem;
+      color: #888;
+    }
+
+    @media (max-width: 768px) {
+      .welcome-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .hero { min-height: 70vh; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==================== NAVBAR ==================== -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <a href="index.html" class="nav-logo" aria-label="Wekan Kasarani School home">
+        <img src="images/logo.jpg" alt="Wekan Kasarani School logo" width="56" height="56" style="border-radius:50%;object-fit:cover;border:2px solid var(--primary);flex-shrink:0;" />
+        <div class="nav-logo-text">
+          <span class="school-name">WEKAN KASARANI</span>
+          <span class="school-sub">SCHOOL, MWIKI</span>
+        </div>
+      </a>
+
+      <ul class="nav-links" role="list">
+        <li><a href="index.html" class="active" data-i18n="nav.home">Home</a></li>
+        <li><a href="news.html" data-i18n="nav.news">News &amp; Calendar</a></li>
+        <li><a href="admissions.html" data-i18n="nav.admissions">Admissions</a></li>
+        <li><a href="curriculum.html" data-i18n="nav.curriculum">Curriculum</a></li>
+        <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
+      </ul>
+
+      <div class="nav-right">
+        <div class="lang-toggle" role="group" aria-label="Language selector">
+          <button data-lang-btn="en" class="active" aria-label="Switch to English">EN</button>
+          <button data-lang-btn="sw" aria-label="Switch to Kiswahili">SW</button>
+        </div>
+        <button class="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-nav">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Nav -->
+  <div class="mobile-nav" id="mobile-nav" role="navigation" aria-label="Mobile navigation">
+    <a href="index.html" class="active" data-i18n="nav.home">Home</a>
+    <a href="news.html" data-i18n="nav.news">News &amp; Calendar</a>
+    <a href="admissions.html" data-i18n="nav.admissions">Admissions</a>
+    <a href="curriculum.html" data-i18n="nav.curriculum">Curriculum</a>
+    <a href="contact.html" data-i18n="nav.contact">Contact</a>
+    <div class="mobile-lang">
+      <button data-lang-btn="en" class="active">English</button>
+      <button data-lang-btn="sw">Kiswahili</button>
+    </div>
+  </div>
+
+  <main>
+
+    <!-- ==================== HERO ==================== -->
+    <section class="hero" aria-label="Hero section">
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <i class="fas fa-map-marker-alt"></i>
+            Mwiki, Kasarani, Nairobi
+          </div>
+          <h1>
+            <span data-i18n="hero.title">Wekan Kasarani<br>School, Mwiki</span>
+          </h1>
+          <p class="hero-subtitle" data-i18n="hero.subtitle">Nurturing Excellence, Building Character</p>
+          <div class="hero-actions">
+            <a href="admissions.html" class="btn btn-primary">
+              <i class="fas fa-user-plus"></i>
+              <span data-i18n="hero.cta">Apply Now</span>
+            </a>
+            <a href="#welcome" class="btn btn-outline">
+              <i class="fas fa-chevron-down"></i>
+              <span data-i18n="hero.learnmore">Learn More</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== STATS BAR ==================== -->
+    <div class="stat-bar" role="region" aria-label="School statistics">
+      <div class="container">
+        <div class="stat-item">
+          <div class="stat-number">650+</div>
+          <div class="stat-label" data-i18n="stats.students">Students</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">30+</div>
+          <div class="stat-label" data-i18n="stats.teachers">Teachers</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">2005</div>
+          <div class="stat-label" data-i18n="stats.established">Est. Year</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">4</div>
+          <div class="stat-label" data-i18n="stats.levels">Learning Levels</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== WELCOME ==================== -->
+    <section class="section" id="welcome" aria-labelledby="welcome-heading">
+      <div class="container">
+        <div class="welcome-grid">
+          <div class="welcome-image-wrap">
+            <div class="welcome-placeholder">
+              <i class="fas fa-school"></i>
+              <p>School Building</p>
+            </div>
+            <div class="welcome-badge">
+              <div>20+ Years</div>
+              <div>of Excellence</div>
+            </div>
+          </div>
+          <div class="welcome-text">
+            <div class="section-heading" style="text-align:left; margin-bottom:1.5rem;">
+              <h2 id="welcome-heading" data-i18n="welcome.heading">Welcome to Wekan Kasarani School</h2>
+              <p data-i18n="welcome.subheading" style="margin-top:0.4rem; color:#888; font-style:italic;">A message from our Head Teacher</p>
+              <div class="underline" style="margin:0.5rem 0 0;"></div>
+            </div>
+            <blockquote>
+              <p data-i18n="welcome.body">At Wekan Kasarani School, we believe every child has the potential to excel. Nestled in the heart of Mwiki, Kasarani, our school provides a nurturing environment where academic excellence meets holistic character development.</p>
+            </blockquote>
+            <div class="welcome-signature">
+              <div class="signature-avatar">
+                <i class="fas fa-user-tie"></i>
+              </div>
+              <div class="signature-info">
+                <div class="name">Mrs. J. Wanjiku</div>
+                <div class="title" data-i18n="welcome.signature">Head Teacher, Wekan Kasarani School</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== LATEST NEWS ==================== -->
+    <section class="section section--alt" aria-labelledby="news-heading">
+      <div class="container">
+        <div class="section-heading">
+          <h2 id="news-heading" data-i18n="news.heading">Latest News</h2>
+          <div class="underline"></div>
+          <p data-i18n="news.subheading">Stay up to date with school happenings</p>
+        </div>
+        <div class="cards-grid">
+          <article class="card">
+            <div class="card-img-placeholder"><i class="fas fa-newspaper"></i></div>
+            <div class="card-body">
+              <div class="card-meta"><i class="fas fa-calendar-alt"></i> 5 April 2025</div>
+              <h3>Term 2 Begins — Welcome Back!</h3>
+              <p>Term 2 of the 2025 academic year kicks off on 28 April. All learners are expected to report by 7:30 AM. Please ensure all fees are settled before the first day.</p>
+              <a href="news.html" class="card-link" data-i18n="news.readmore">Read more <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card-img-placeholder"><i class="fas fa-trophy"></i></div>
+            <div class="card-body">
+              <div class="card-meta"><i class="fas fa-calendar-alt"></i> 22 March 2025</div>
+              <h3>Interclass Sports Day — Results</h3>
+              <p>Congratulations to Grade 6 Blue House for winning the 2025 Interclass Sports Day! Thank you to all parents, teachers, and pupils who participated.</p>
+              <a href="news.html" class="card-link" data-i18n="news.readmore">Read more <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card-img-placeholder"><i class="fas fa-book-open"></i></div>
+            <div class="card-body">
+              <div class="card-meta"><i class="fas fa-calendar-alt"></i> 10 March 2025</div>
+              <h3>CBC Parent Information Evening</h3>
+              <p>We hosted a successful CBC briefing for Grade 4–6 parents. Presentation slides are now available at the school office. Thank you to all who attended.</p>
+              <a href="news.html" class="card-link" data-i18n="news.readmore">Read more <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </article>
+        </div>
+        <div class="text-center mt-3">
+          <a href="news.html" class="btn btn-outline">
+            <i class="fas fa-newspaper"></i> View All News
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== VALUES ==================== -->
+    <section class="section" aria-labelledby="values-heading">
+      <div class="container">
+        <div class="section-heading">
+          <h2 id="values-heading" data-i18n="values.heading">Our Core Values</h2>
+          <div class="underline"></div>
+          <p data-i18n="values.subheading">The principles that guide our learning community</p>
+        </div>
+        <div class="cards-grid-4">
+          <div class="value-item">
+            <div class="value-icon"><i class="fas fa-star"></i></div>
+            <h3 data-i18n="values.excellence">Excellence</h3>
+            <p data-i18n="values.excellence.desc">We set high standards and inspire every learner to achieve their best.</p>
+          </div>
+          <div class="value-item">
+            <div class="value-icon"><i class="fas fa-balance-scale"></i></div>
+            <h3 data-i18n="values.integrity">Integrity</h3>
+            <p data-i18n="values.integrity.desc">We build honest, responsible citizens of good character.</p>
+          </div>
+          <div class="value-item">
+            <div class="value-icon"><i class="fas fa-hands-holding-heart"></i></div>
+            <h3 data-i18n="values.community">Community</h3>
+            <p data-i18n="values.community.desc">We foster a warm, inclusive family atmosphere for all.</p>
+          </div>
+          <div class="value-item">
+            <div class="value-icon"><i class="fas fa-lightbulb"></i></div>
+            <h3 data-i18n="values.innovation">Innovation</h3>
+            <p data-i18n="values.innovation.desc">We embrace modern learning approaches aligned with CBC.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== GALLERY ==================== -->
+    <section class="section section--alt" aria-labelledby="gallery-heading">
+      <div class="container">
+        <div class="section-heading">
+          <h2 id="gallery-heading" data-i18n="gallery.heading">School Life</h2>
+          <div class="underline"></div>
+          <p data-i18n="gallery.subheading">A glimpse into our vibrant learning community</p>
+        </div>
+        <div class="gallery-strip">
+          <div class="gallery-item">
+            <div class="gallery-placeholder"><i class="fas fa-chalkboard-teacher"></i><span>Classroom</span></div>
+          </div>
+          <div class="gallery-item">
+            <div class="gallery-placeholder"><i class="fas fa-futbol"></i><span>Sports</span></div>
+          </div>
+          <div class="gallery-item">
+            <div class="gallery-placeholder"><i class="fas fa-flask"></i><span>Science</span></div>
+          </div>
+          <div class="gallery-item">
+            <div class="gallery-placeholder"><i class="fas fa-music"></i><span>Arts &amp; Music</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== CTA STRIP ==================== -->
+    <section style="background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); padding: 3.5rem 0; text-align:center;" aria-label="Call to action">
+      <div class="container">
+        <h2 style="color:var(--bg-dark); margin-bottom:0.75rem; font-size:clamp(1.4rem,3vw,2rem);">Ready to Join Our School?</h2>
+        <p style="color:rgba(0,0,0,0.65); margin-bottom:1.75rem; font-size:1.05rem;">Applications are open for all levels. Contact us today.</p>
+        <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+          <a href="admissions.html" class="btn btn-white">
+            <i class="fas fa-user-plus"></i>
+            <span data-i18n="hero.cta">Apply Now</span>
+          </a>
+          <a href="contact.html" class="btn" style="background:rgba(0,0,0,0.15);color:var(--bg-dark);border:2px solid rgba(0,0,0,0.2);">
+            <i class="fas fa-phone"></i>
+            <span data-i18n="nav.contact">Contact</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="school-name-footer">WEKAN KASARANI SCHOOL, MWIKI</div>
+          <p data-i18n="footer.about">Quality CBC education for learners in Mwiki, Kasarani, Nairobi. Nurturing excellence and building character since our founding.</p>
+          <div class="social-links">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter/X"><i class="fab fa-x-twitter"></i></a>
+            <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer.quicklinks">Quick Links</h4>
+          <ul>
+            <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+            <li><a href="news.html" data-i18n="nav.news">News &amp; Calendar</a></li>
+            <li><a href="admissions.html" data-i18n="nav.admissions">Admissions</a></li>
+            <li><a href="curriculum.html" data-i18n="nav.curriculum">Curriculum</a></li>
+            <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer.contact">Contact</h4>
+          <div class="footer-contact-item"><i class="fas fa-map-marker-alt"></i><span>Mwiki Road, Kasarani, Nairobi, Kenya</span></div>
+          <div class="footer-contact-item"><i class="fas fa-phone"></i><span>+254 700 000 000</span></div>
+          <div class="footer-contact-item"><i class="fas fa-envelope"></i><span>info@wekankasarani.sc.ke</span></div>
+        </div>
+        <div class="footer-col">
+          <h4>Office Hours</h4>
+          <div class="footer-contact-item"><i class="fas fa-clock"></i><span>Mon–Fri: 7:00 AM – 5:00 PM</span></div>
+          <div class="footer-contact-item"><i class="fas fa-clock"></i><span>Sat: 8:00 AM – 12:00 PM</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p data-i18n="footer.copyright">© 2025 Wekan Kasarani School, Mwiki. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/i18n.js"></script>
+</body>
+</html>

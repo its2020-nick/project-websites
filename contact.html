@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Contact Wekan Kasarani School, Mwiki — address, phone, email, map, and contact form." />
+  <title>Contact — Wekan Kasarani School, Mwiki</title>
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 3.5rem;
+      align-items: start;
+    }
+
+    .contact-info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .form-box {
+      background: #fff;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-md);
+      padding: 2.5rem;
+    }
+
+    .form-box h2 {
+      margin-bottom: 1.75rem;
+      font-size: 1.4rem;
+    }
+
+    #form-success {
+      display: none;
+      padding: 1rem 1.25rem;
+      background: #e8f5e9;
+      border-left: 4px solid #2e7d32;
+      border-radius: var(--radius);
+      color: #1b5e20;
+      font-size: 0.94rem;
+      margin-bottom: 1.25rem;
+    }
+
+    @media (max-width: 900px) {
+      .contact-layout { grid-template-columns: 1fr; }
+      .contact-info-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 480px) {
+      .form-box { padding: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <a href="index.html" class="nav-logo" aria-label="Wekan Kasarani School home">
+        <img src="images/logo.jpg" alt="Wekan Kasarani School logo" width="56" height="56" style="border-radius:50%;object-fit:cover;border:2px solid var(--primary);flex-shrink:0;" />
+        <div class="nav-logo-text">
+          <span class="school-name">WEKAN KASARANI</span>
+          <span class="school-sub">SCHOOL, MWIKI</span>
+        </div>
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+        <li><a href="news.html" data-i18n="nav.news">News &amp; Calendar</a></li>
+        <li><a href="admissions.html" data-i18n="nav.admissions">Admissions</a></li>
+        <li><a href="curriculum.html" data-i18n="nav.curriculum">Curriculum</a></li>
+        <li><a href="contact.html" class="active" data-i18n="nav.contact">Contact</a></li>
+      </ul>
+      <div class="nav-right">
+        <div class="lang-toggle" role="group" aria-label="Language selector">
+          <button data-lang-btn="en" class="active">EN</button>
+          <button data-lang-btn="sw">SW</button>
+        </div>
+        <button class="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-nav">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="mobile-nav" id="mobile-nav">
+    <a href="index.html" data-i18n="nav.home">Home</a>
+    <a href="news.html" data-i18n="nav.news">News &amp; Calendar</a>
+    <a href="admissions.html" data-i18n="nav.admissions">Admissions</a>
+    <a href="curriculum.html" data-i18n="nav.curriculum">Curriculum</a>
+    <a href="contact.html" class="active" data-i18n="nav.contact">Contact</a>
+    <div class="mobile-lang">
+      <button data-lang-btn="en" class="active">English</button>
+      <button data-lang-btn="sw">Kiswahili</button>
+    </div>
+  </div>
+
+  <main>
+    <!-- PAGE HERO -->
+    <div class="page-hero">
+      <div class="container">
+        <h1 data-i18n="contact.title">Contact Us</h1>
+        <p data-i18n="contact.subtitle">We'd love to hear from you — visit us or send a message</p>
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html" data-i18n="nav.home">Home</a>
+          <span><i class="fas fa-chevron-right" style="font-size:0.7rem;"></i></span>
+          <span data-i18n="nav.contact">Contact</span>
+        </nav>
+      </div>
+    </div>
+
+    <!-- CONTACT SECTION -->
+    <section class="section">
+      <div class="container">
+        <div class="contact-layout">
+
+          <!-- LEFT: Info -->
+          <div>
+            <div class="section-heading" style="text-align:left; margin-bottom:1.75rem;">
+              <h2 data-i18n="contact.info.heading">Get In Touch</h2>
+              <div class="underline" style="margin:0.5rem 0 0;"></div>
+            </div>
+
+            <div class="contact-info-grid">
+              <div class="contact-info-card">
+                <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                <div>
+                  <h4 data-i18n="contact.address.label">Address</h4>
+                  <p data-i18n="contact.address.value">Wekan Kasarani School, Mwiki Road, Kasarani, Nairobi, Kenya</p>
+                </div>
+              </div>
+              <div class="contact-info-card">
+                <div class="contact-icon"><i class="fas fa-phone"></i></div>
+                <div>
+                  <h4 data-i18n="contact.phone.label">Phone</h4>
+                  <a href="tel:+254700000000" style="color:#555;font-size:0.94rem;">+254 700 000 000</a><br>
+                  <a href="tel:+254711000000" style="color:#555;font-size:0.94rem;">+254 711 000 000</a>
+                </div>
+              </div>
+              <div class="contact-info-card">
+                <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                <div>
+                  <h4 data-i18n="contact.email.label">Email</h4>
+                  <a href="mailto:info@wekankasarani.sc.ke" style="color:#555;font-size:0.94rem;word-break:break-all;">info@wekankasarani.sc.ke</a>
+                </div>
+              </div>
+              <div class="contact-info-card">
+                <div class="contact-icon"><i class="fas fa-clock"></i></div>
+                <div>
+                  <h4 data-i18n="contact.hours.label">Office Hours</h4>
+                  <p data-i18n="contact.hours.value">Mon – Fri: 7:00 AM – 5:00 PM</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Map -->
+            <div>
+              <h3 style="margin-bottom:1rem;" data-i18n="contact.map.heading">Find Us</h3>
+              <div class="map-wrapper">
+                <!-- Google Maps embed for Mwiki, Kasarani, Nairobi -->
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15955.076048539685!2d36.89279!3d-1.2189!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f3f6a3b56fd63%3A0x3b20d35c49127e4d!2sMwiki%2C%20Kasarani%2C%20Nairobi!5e0!3m2!1sen!2ske!4v1680000000000"
+                  allowfullscreen=""
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                  title="Map showing Mwiki, Kasarani, Nairobi — location of Wekan Kasarani School"
+                ></iframe>
+              </div>
+            </div>
+          </div>
+
+          <!-- RIGHT: Form -->
+          <div>
+            <div class="form-box">
+              <h2 data-i18n="contact.form.heading">Send Us a Message</h2>
+              <div id="form-success" role="alert" aria-live="polite"></div>
+              <form id="contact-form" novalidate>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="form-name" data-i18n="contact.form.name">Full Name</label>
+                    <input
+                      type="text"
+                      id="form-name"
+                      name="name"
+                      class="form-control"
+                      placeholder="e.g. John Kamau"
+                      autocomplete="name"
+                      required
+                    />
+                    <div class="form-feedback" id="form-name-error" role="alert"></div>
+                  </div>
+                  <div class="form-group">
+                    <label for="form-email" data-i18n="contact.form.email">Email Address</label>
+                    <input
+                      type="email"
+                      id="form-email"
+                      name="email"
+                      class="form-control"
+                      placeholder="you@example.com"
+                      autocomplete="email"
+                      required
+                    />
+                    <div class="form-feedback" id="form-email-error" role="alert"></div>
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="form-phone" data-i18n="contact.form.phone">Phone Number</label>
+                    <input
+                      type="tel"
+                      id="form-phone"
+                      name="phone"
+                      class="form-control"
+                      placeholder="+254 7XX XXX XXX"
+                      autocomplete="tel"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="form-subject" data-i18n="contact.form.subject">Subject</label>
+                    <input
+                      type="text"
+                      id="form-subject"
+                      name="subject"
+                      class="form-control"
+                      placeholder="e.g. Admissions Inquiry"
+                    />
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="form-message" data-i18n="contact.form.message">Your Message</label>
+                  <textarea
+                    id="form-message"
+                    name="message"
+                    class="form-control"
+                    placeholder="Write your message here..."
+                    required
+                  ></textarea>
+                  <div class="form-feedback" id="form-message-error" role="alert"></div>
+                </div>
+
+                <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center;">
+                  <i class="fas fa-paper-plane"></i>
+                  <span data-i18n="contact.form.send">Send Message</span>
+                </button>
+
+                <p style="font-size:0.78rem;color:#aaa;margin-top:0.75rem;text-align:center;">
+                  <i class="fas fa-lock" style="font-size:0.75rem;"></i>
+                  Your information is kept private and will only be used to respond to your enquiry.
+                </p>
+
+              </form>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="school-name-footer">WEKAN KASARANI SCHOOL, MWIKI</div>
+          <p data-i18n="footer.about">Quality CBC education for learners in Mwiki, Kasarani, Nairobi.</p>
+          <div class="social-links">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter/X"><i class="fab fa-x-twitter"></i></a>
+            <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer.quicklinks">Quick Links</h4>
+          <ul>
+            <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+            <li><a href="news.html" data-i18n="nav.news">News &amp; Calendar</a></li>
+            <li><a href="admissions.html" data-i18n="nav.admissions">Admissions</a></li>
+            <li><a href="curriculum.html" data-i18n="nav.curriculum">Curriculum</a></li>
+            <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer.contact">Contact</h4>
+          <div class="footer-contact-item"><i class="fas fa-map-marker-alt"></i><span>Mwiki Road, Kasarani, Nairobi</span></div>
+          <div class="footer-contact-item"><i class="fas fa-phone"></i><span>+254 700 000 000</span></div>
+          <div class="footer-contact-item"><i class="fas fa-envelope"></i><span>info@wekankasarani.sc.ke</span></div>
+        </div>
+        <div class="footer-col">
+          <h4>Office Hours</h4>
+          <div class="footer-contact-item"><i class="fas fa-clock"></i><span>Mon–Fri: 7:00 AM – 5:00 PM</span></div>
+          <div class="footer-contact-item"><i class="fas fa-clock"></i><span>Sat: 8:00 AM – 12:00 PM</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p data-i18n="footer.copyright">© 2025 Wekan Kasarani School, Mwiki. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/i18n.js"></script>
+</body>
+</html>

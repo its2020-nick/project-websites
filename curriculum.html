@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Wekan Kasarani School curriculum — CBC education from Pre-Primary to Junior Secondary, subjects, and co-curricular activities." />
+  <title>Curriculum — Wekan Kasarani School, Mwiki</title>
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    .cbc-competencies {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1rem;
+    }
+    .competency-item {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      padding: 0.9rem 1.1rem;
+      background: #fff;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      font-size: 0.88rem;
+      color: var(--bg-dark);
+    }
+    .competency-item i {
+      width: 32px;
+      height: 32px;
+      background: var(--primary);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--bg-dark);
+      font-size: 0.9rem;
+      flex-shrink: 0;
+    }
+    .cocurr-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.25rem;
+    }
+    .cocurr-item {
+      text-align: center;
+      padding: 1.5rem 1rem;
+      background: #fff;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+    .cocurr-item:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+    .cocurr-icon {
+      font-size: 2rem;
+      color: var(--primary-dark);
+      margin-bottom: 0.75rem;
+    }
+    .cocurr-item h4 { font-size: 0.95rem; color: var(--primary-deeper); margin-bottom: 0.3rem; }
+    .cocurr-item p  { font-size: 0.82rem; color: #888; margin-bottom: 0; }
+    .level-panel { display: block; }
+    .level-panel[hidden] { display: none; }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <a href="index.html" class="nav-logo" aria-label="Wekan Kasarani School home">
+        <img src="images/logo.jpg" alt="Wekan Kasarani School logo" width="56" height="56" style="border-radius:50%;object-fit:cover;border:2px solid var(--primary);flex-shrink:0;" />
+        <div class="nav-logo-text">
+          <span class="school-name">WEKAN KASARANI</span>
+          <span class="school-sub">SCHOOL, MWIKI</span>
+        </div>
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+        <li><a href="news.html" data-i18n="nav.news">News &amp; Calendar</a></li>
+        <li><a href="admissions.html" data-i18n="nav.admissions">Admissions</a></li>
+        <li><a href="curriculum.html" class="active" data-i18n="nav.curriculum">Curriculum</a></li>
+        <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
+      </ul>
+      <div class="nav-right">
+        <div class="lang-toggle" role="group" aria-label="Language selector">
+          <button data-lang-btn="en" class="active">EN</button>
+          <button data-lang-btn="sw">SW</button>
+        </div>
+        <button class="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-nav">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="mobile-nav" id="mobile-nav">
+    <a href="index.html" data-i18n="nav.home">Home</a>
+    <a href="news.html" data-i18n="nav.news">News &amp; Calendar</a>
+    <a href="admissions.html" data-i18n="nav.admissions">Admissions</a>
+    <a href="curriculum.html" class="active" data-i18n="nav.curriculum">Curriculum</a>
+    <a href="contact.html" data-i18n="nav.contact">Contact</a>
+    <div class="mobile-lang">
+      <button data-lang-btn="en" class="active">English</button>
+      <button data-lang-btn="sw">Kiswahili</button>
+    </div>
+  </div>
+
+  <main>
+    <!-- PAGE HERO -->
+    <div class="page-hero">
+      <div class="container">
+        <h1 data-i18n="curriculum.title">Curriculum</h1>
+        <p data-i18n="curriculum.subtitle">World-class CBC education from Pre-Primary to Junior Secondary</p>
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html" data-i18n="nav.home">Home</a>
+          <span><i class="fas fa-chevron-right" style="font-size:0.7rem;"></i></span>
+          <span data-i18n="nav.curriculum">Curriculum</span>
+        </nav>
+      </div>
+    </div>
+
+    <!-- OVERVIEW -->
+    <section class="section" aria-labelledby="overview-heading">
+      <div class="container">
+        <div class="section-heading">
+          <h2 id="overview-heading" data-i18n="curriculum.overview.heading">About Our Curriculum</h2>
+          <div class="underline"></div>
+        </div>
+        <p style="max-width:760px;margin:0 auto 0; text-align:center; color:#555; font-size:1.02rem;" data-i18n="curriculum.overview.body">Wekan Kasarani School implements Kenya's Competency Based Curriculum (CBC), introduced by the Kenya Institute of Curriculum Development (KICD).</p>
+      </div>
+    </section>
+
+    <!-- LEVELS (TABS) -->
+    <section class="section section--alt" aria-labelledby="levels-heading">
+      <div class="container">
+        <div class="section-heading">
+          <h2 id="levels-heading" data-i18n="curriculum.levels.heading">Learning Levels</h2>
+          <div class="underline"></div>
+        </div>
+
+        <!-- Tabs -->
+        <div class="level-tabs" role="tablist">
+          <button class="level-tab" data-target="level-pp" role="tab" aria-selected="true">Pre-Primary (PP1–PP2)</button>
+          <button class="level-tab" data-target="level-lp" role="tab" aria-selected="false">Lower Primary (Gr 1–3)</button>
+          <button class="level-tab" data-target="level-up" role="tab" aria-selected="false">Upper Primary (Gr 4–6)</button>
+          <button class="level-tab" data-target="level-js" role="tab" aria-selected="false">Junior Secondary (Gr 7–9)</button>
+        </div>
+
+        <!-- PP1–PP2 -->
+        <div class="level-panel" id="level-pp" role="tabpanel">
+          <h3 style="margin-bottom:1rem; color:var(--primary-deeper);">Pre-Primary — PP1 &amp; PP2 (Ages 4–5)</h3>
+          <p style="color:#555; margin-bottom:1.5rem;">The Pre-Primary level focuses on play-based learning to develop foundational literacy, numeracy, and social skills. Learners are introduced to the world through exploration and creativity.</p>
+          <div class="subjects-grid">
+            <div class="subject-card"><i class="fas fa-language"></i> Language Activities (English)</div>
+            <div class="subject-card"><i class="fas fa-book"></i> Language Activities (Kiswahili)</div>
+            <div class="subject-card"><i class="fas fa-calculator"></i> Mathematical Activities</div>
+            <div class="subject-card"><i class="fas fa-leaf"></i> Environmental Activities</div>
+            <div class="subject-card"><i class="fas fa-palette"></i> Creative Activities</div>
+            <div class="subject-card"><i class="fas fa-running"></i> Psychomotor &amp; Creative Arts</div>
+            <div class="subject-card"><i class="fas fa-pray"></i> Religious Activities (CRE/IRE/HRE)</div>
+          </div>
+        </div>
+
+        <!-- Lower Primary -->
+        <div class="level-panel" id="level-lp" role="tabpanel" hidden>
+          <h3 style="margin-bottom:1rem; color:var(--primary-deeper);">Lower Primary — Grades 1–3 (Ages 6–8)</h3>
+          <p style="color:#555; margin-bottom:1.5rem;">Learners build core literacy and numeracy skills while developing scientific, social, and creative thinking. Kiswahili is used as the language of instruction in early grades.</p>
+          <div class="subjects-grid">
+            <div class="subject-card"><i class="fas fa-book-open"></i> Literacy Activities (English)</div>
+            <div class="subject-card"><i class="fas fa-book"></i> Kiswahili (Kusoma na Kuandika)</div>
+            <div class="subject-card"><i class="fas fa-calculator"></i> Mathematical Activities</div>
+            <div class="subject-card"><i class="fas fa-globe-africa"></i> Environmental &amp; Social Studies</div>
+            <div class="subject-card"><i class="fas fa-microscope"></i> Science &amp; Technology</div>
+            <div class="subject-card"><i class="fas fa-music"></i> Creative Arts &amp; Sports</div>
+            <div class="subject-card"><i class="fas fa-pray"></i> Religious Education (CRE/IRE/HRE)</div>
+            <div class="subject-card"><i class="fas fa-users"></i> Social Skills</div>
+          </div>
+        </div>
+
+        <!-- Upper Primary -->
+        <div class="level-panel" id="level-up" role="tabpanel" hidden>
+          <h3 style="margin-bottom:1rem; color:var(--primary-deeper);">Upper Primary — Grades 4–6 (Ages 9–11)</h3>
+          <p style="color:#555; margin-bottom:1.5rem;">Learners deepen subject knowledge and begin to apply skills in real-world contexts. Emphasis is placed on critical thinking, problem solving, and STEM fundamentals.</p>
+          <div class="subjects-grid">
+            <div class="subject-card"><i class="fas fa-book-open"></i> English</div>
+            <div class="subject-card"><i class="fas fa-book"></i> Kiswahili</div>
+            <div class="subject-card"><i class="fas fa-calculator"></i> Mathematics</div>
+            <div class="subject-card"><i class="fas fa-flask"></i> Integrated Science</div>
+            <div class="subject-card"><i class="fas fa-globe-africa"></i> Social Studies</div>
+            <div class="subject-card"><i class="fas fa-seedling"></i> Agriculture &amp; Nutrition</div>
+            <div class="subject-card"><i class="fas fa-laptop"></i> Creative Arts &amp; Sports</div>
+            <div class="subject-card"><i class="fas fa-pray"></i> Religious Education (CRE/IRE/HRE)</div>
+            <div class="subject-card"><i class="fas fa-wrench"></i> Pre-Technical &amp; Pre-Career Education</div>
+          </div>
+        </div>
+
+        <!-- Junior Secondary -->
+        <div class="level-panel" id="level-js" role="tabpanel" hidden>
+          <h3 style="margin-bottom:1rem; color:var(--primary-deeper);">Junior Secondary — Grades 7–9 (Ages 12–14)</h3>
+          <p style="color:#555; margin-bottom:1.5rem;">Junior Secondary expands into distinct subject areas. Learners are guided to identify and develop their talents and career interests through a broad curriculum.</p>
+          <div class="subjects-grid">
+            <div class="subject-card"><i class="fas fa-book-open"></i> English</div>
+            <div class="subject-card"><i class="fas fa-book"></i> Kiswahili / KSL</div>
+            <div class="subject-card"><i class="fas fa-calculator"></i> Mathematics</div>
+            <div class="subject-card"><i class="fas fa-flask"></i> Integrated Science</div>
+            <div class="subject-card"><i class="fas fa-globe-africa"></i> Social Studies</div>
+            <div class="subject-card"><i class="fas fa-pray"></i> Religious Education (CRE/IRE/HRE)</div>
+            <div class="subject-card"><i class="fas fa-dumbbell"></i> Health Education</div>
+            <div class="subject-card"><i class="fas fa-paint-brush"></i> Creative Arts</div>
+            <div class="subject-card"><i class="fas fa-laptop-code"></i> Computer Science</div>
+            <div class="subject-card"><i class="fas fa-business-time"></i> Business Studies</div>
+            <div class="subject-card"><i class="fas fa-tools"></i> Home Science / Pre-Technical</div>
+            <div class="subject-card"><i class="fas fa-language"></i> Foreign Languages (optional)</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CBC EXPLANATION -->
+    <section class="section" aria-labelledby="cbc-heading">
+      <div class="container">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:start;" class="two-col">
+          <div>
+            <div class="section-heading" style="text-align:left;margin-bottom:1.5rem;">
+              <h2 id="cbc-heading" data-i18n="curriculum.cbc.heading">Understanding CBC</h2>
+              <div class="underline" style="margin:0.5rem 0 0;"></div>
+            </div>
+            <p style="color:#555;" data-i18n="curriculum.cbc.body">The Competency Based Curriculum focuses on nurturing seven core competencies...</p>
+          </div>
+          <div>
+            <h3 style="margin-bottom:1rem;">The 7 Core Competencies</h3>
+            <div class="cbc-competencies">
+              <div class="competency-item"><i class="fas fa-comments"></i> Communication &amp; Collaboration</div>
+              <div class="competency-item"><i class="fas fa-brain"></i> Critical Thinking &amp; Problem Solving</div>
+              <div class="competency-item"><i class="fas fa-lightbulb"></i> Creativity &amp; Imagination</div>
+              <div class="competency-item"><i class="fas fa-globe"></i> Citizenship</div>
+              <div class="competency-item"><i class="fas fa-laptop"></i> Digital Literacy</div>
+              <div class="competency-item"><i class="fas fa-book-reader"></i> Learning to Learn</div>
+              <div class="competency-item"><i class="fas fa-user-check"></i> Self-Efficacy</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CO-CURRICULAR -->
+    <section class="section section--alt" aria-labelledby="cocurr-heading">
+      <div class="container">
+        <div class="section-heading">
+          <h2 id="cocurr-heading" data-i18n="curriculum.cocurricular.heading">Co-Curricular Activities</h2>
+          <div class="underline"></div>
+          <p data-i18n="curriculum.cocurricular.subheading">Learning extends beyond the classroom</p>
+        </div>
+        <div class="cocurr-grid">
+          <div class="cocurr-item">
+            <div class="cocurr-icon"><i class="fas fa-futbol"></i></div>
+            <h4>Football</h4>
+            <p>Boys &amp; girls teams, interclass and interschool competitions</p>
+          </div>
+          <div class="cocurr-item">
+            <div class="cocurr-icon"><i class="fas fa-running"></i></div>
+            <h4>Athletics</h4>
+            <p>Track &amp; field — sprint, long distance, high jump, javelin</p>
+          </div>
+          <div class="cocurr-item">
+            <div class="cocurr-icon"><i class="fas fa-music"></i></div>
+            <h4>Choir &amp; Music</h4>
+            <p>School choir, traditional music, and drama festivals</p>
+          </div>
+          <div class="cocurr-item">
+            <div class="cocurr-icon"><i class="fas fa-flask"></i></div>
+            <h4>STEM Club</h4>
+            <p>Science projects, robotics exploration, and coding basics</p>
+          </div>
+          <div class="cocurr-item">
+            <div class="cocurr-icon"><i class="fas fa-comments"></i></div>
+            <h4>Debate Club</h4>
+            <p>Public speaking, argumentation, and critical thinking</p>
+          </div>
+          <div class="cocurr-item">
+            <div class="cocurr-icon"><i class="fas fa-leaf"></i></div>
+            <h4>Environmental Club</h4>
+            <p>Tree planting, recycling drives, and conservation projects</p>
+          </div>
+          <div class="cocurr-item">
+            <div class="cocurr-icon"><i class="fas fa-paint-brush"></i></div>
+            <h4>Art &amp; Craft</h4>
+            <p>Drawing, painting, sculpture, and local craft traditions</p>
+          </div>
+          <div class="cocurr-item">
+            <div class="cocurr-icon"><i class="fas fa-book-open"></i></div>
+            <h4>Reading Club</h4>
+            <p>Weekly reading sessions, book reviews, and storytelling</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section style="background:linear-gradient(135deg,var(--primary) 0%,var(--primary-dark) 100%);padding:3rem 0;text-align:center;" aria-label="Call to action">
+      <div class="container">
+        <h2 style="color:var(--bg-dark);margin-bottom:0.6rem;">Interested in Enrolling?</h2>
+        <p style="color:rgba(0,0,0,0.65);margin-bottom:1.5rem;">Join our vibrant learning community today.</p>
+        <a href="admissions.html" class="btn btn-white">
+          <i class="fas fa-user-plus"></i>
+          <span data-i18n="hero.cta">Apply Now</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="school-name-footer">WEKAN KASARANI SCHOOL, MWIKI</div>
+          <p data-i18n="footer.about">Quality CBC education for learners in Mwiki, Kasarani, Nairobi.</p>
+          <div class="social-links">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter/X"><i class="fab fa-x-twitter"></i></a>
+            <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer.quicklinks">Quick Links</h4>
+          <ul>
+            <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+            <li><a href="news.html" data-i18n="nav.news">News &amp; Calendar</a></li>
+            <li><a href="admissions.html" data-i18n="nav.admissions">Admissions</a></li>
+            <li><a href="curriculum.html" data-i18n="nav.curriculum">Curriculum</a></li>
+            <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer.contact">Contact</h4>
+          <div class="footer-contact-item"><i class="fas fa-map-marker-alt"></i><span>Mwiki Road, Kasarani, Nairobi</span></div>
+          <div class="footer-contact-item"><i class="fas fa-phone"></i><span>+254 700 000 000</span></div>
+          <div class="footer-contact-item"><i class="fas fa-envelope"></i><span>info@wekankasarani.sc.ke</span></div>
+        </div>
+        <div class="footer-col">
+          <h4>Office Hours</h4>
+          <div class="footer-contact-item"><i class="fas fa-clock"></i><span>Mon–Fri: 7:00 AM – 5:00 PM</span></div>
+          <div class="footer-contact-item"><i class="fas fa-clock"></i><span>Sat: 8:00 AM – 12:00 PM</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p data-i18n="footer.copyright">© 2025 Wekan Kasarani School, Mwiki. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/i18n.js"></script>
+</body>
+</html>

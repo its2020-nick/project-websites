@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Wekan Kasarani School news, announcements, school calendar, and upcoming events." />
+  <title>News &amp; Calendar — Wekan Kasarani School, Mwiki</title>
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    .news-layout {
+      display: grid;
+      grid-template-columns: 1fr 360px;
+      gap: 3rem;
+      align-items: start;
+    }
+    .news-article {
+      display: grid;
+      grid-template-columns: 100px 1fr;
+      gap: 1.5rem;
+      padding: 1.75rem 0;
+      border-bottom: 1px solid var(--border-color);
+    }
+    .news-article:last-child { border-bottom: none; }
+    .article-date-col {
+      text-align: center;
+    }
+    .article-date-badge {
+      background: var(--primary);
+      border-radius: var(--radius);
+      padding: 0.6rem 0.4rem;
+      color: var(--bg-dark);
+      font-family: 'Poppins', sans-serif;
+    }
+    .article-date-badge .day   { font-size: 1.8rem; font-weight: 800; line-height: 1; }
+    .article-date-badge .month { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; }
+    .article-date-badge .year  { font-size: 0.7rem; color: rgba(0,0,0,0.55); }
+    .article-content h3 { color: var(--bg-dark); margin-bottom: 0.4rem; font-size: 1.1rem; }
+    .article-content p  { color: #555; font-size: 0.93rem; margin-bottom: 0.75rem; }
+    .article-tag {
+      display: inline-block;
+      padding: 0.2rem 0.65rem;
+      background: var(--accent);
+      border-radius: 99px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--primary-deeper);
+      font-family: 'Poppins', sans-serif;
+      margin-bottom: 0.5rem;
+    }
+    .sidebar-box {
+      background: #fff;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+      padding: 1.5rem;
+      margin-bottom: 1.75rem;
+    }
+    .sidebar-box h3 {
+      font-size: 1rem;
+      color: var(--primary-deeper);
+      margin-bottom: 1rem;
+      padding-bottom: 0.6rem;
+      border-bottom: 2px solid var(--primary);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    @media (max-width: 768px) {
+      .news-layout { grid-template-columns: 1fr; }
+      .news-article { grid-template-columns: 80px 1fr; gap: 1rem; }
+    }
+    @media (max-width: 480px) {
+      .news-article { grid-template-columns: 1fr; }
+      .article-date-col { display: flex; align-items: center; gap: 0.75rem; }
+      .article-date-badge { display: flex; gap: 0.4rem; align-items: center; padding: 0.4rem 0.75rem; }
+      .article-date-badge .day { font-size: 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <a href="index.html" class="nav-logo" aria-label="Wekan Kasarani School home">
+        <img src="images/logo.jpg" alt="Wekan Kasarani School logo" width="56" height="56" style="border-radius:50%;object-fit:cover;border:2px solid var(--primary);flex-shrink:0;" />
+        <div class="nav-logo-text">
+          <span class="school-name">WEKAN KASARANI</span>
+          <span class="school-sub">SCHOOL, MWIKI</span>
+        </div>
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+        <li><a href="news.html" class="active" data-i18n="nav.news">News &amp; Calendar</a></li>
+        <li><a href="admissions.html" data-i18n="nav.admissions">Admissions</a></li>
+        <li><a href="curriculum.html" data-i18n="nav.curriculum">Curriculum</a></li>
+        <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
+      </ul>
+      <div class="nav-right">
+        <div class="lang-toggle" role="group" aria-label="Language selector">
+          <button data-lang-btn="en" class="active">EN</button>
+          <button data-lang-btn="sw">SW</button>
+        </div>
+        <button class="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-nav">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="mobile-nav" id="mobile-nav">
+    <a href="index.html" data-i18n="nav.home">Home</a>
+    <a href="news.html" class="active" data-i18n="nav.news">News &amp; Calendar</a>
+    <a href="admissions.html" data-i18n="nav.admissions">Admissions</a>
+    <a href="curriculum.html" data-i18n="nav.curriculum">Curriculum</a>
+    <a href="contact.html" data-i18n="nav.contact">Contact</a>
+    <div class="mobile-lang">
+      <button data-lang-btn="en" class="active">English</button>
+      <button data-lang-btn="sw">Kiswahili</button>
+    </div>
+  </div>
+
+  <main>
+    <!-- PAGE HERO -->
+    <div class="page-hero">
+      <div class="container">
+        <h1 data-i18n="news_page.heading">News &amp; Calendar</h1>
+        <p data-i18n="news_page.subheading">School updates, announcements and term dates</p>
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html" data-i18n="nav.home">Home</a>
+          <span><i class="fas fa-chevron-right" style="font-size:0.7rem;"></i></span>
+          <span data-i18n="nav.news">News &amp; Calendar</span>
+        </nav>
+      </div>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <section class="section">
+      <div class="container">
+        <div class="news-layout">
+
+          <!-- NEWS ARTICLES -->
+          <div>
+            <h2 style="margin-bottom:1.5rem; font-size:1.35rem;" data-i18n="news.heading">Latest News</h2>
+
+            <article class="news-article">
+              <div class="article-date-col">
+                <div class="article-date-badge">
+                  <div class="day">28</div>
+                  <div class="month">Apr</div>
+                  <div class="year">2025</div>
+                </div>
+              </div>
+              <div class="article-content">
+                <span class="article-tag">Announcement</span>
+                <h3>Term 2 Begins — Welcome Back!</h3>
+                <p>Term 2 of the 2025 academic year begins on Monday 28 April. All learners are expected to report by 7:30 AM in full uniform. School fees must be cleared before or on the first day. Parents are welcome to accompany new learners to their classes. Have a wonderful term!</p>
+                <a href="#" class="card-link" data-i18n="news.readmore">Read more <i class="fas fa-arrow-right"></i></a>
+              </div>
+            </article>
+
+            <article class="news-article">
+              <div class="article-date-col">
+                <div class="article-date-badge">
+                  <div class="day">22</div>
+                  <div class="month">Mar</div>
+                  <div class="year">2025</div>
+                </div>
+              </div>
+              <div class="article-content">
+                <span class="article-tag">Sports</span>
+                <h3>Interclass Sports Day — Results &amp; Highlights</h3>
+                <p>Congratulations to Grade 6 Blue House for winning the 2025 Interclass Sports Day with 340 points! Yellow House came a close second with 310 points. Special recognition goes to our athletes in track &amp; field. Thank you to all parents, teachers, and pupils who participated and supported.</p>
+                <a href="#" class="card-link" data-i18n="news.readmore">Read more <i class="fas fa-arrow-right"></i></a>
+              </div>
+            </article>
+
+            <article class="news-article">
+              <div class="article-date-col">
+                <div class="article-date-badge">
+                  <div class="day">10</div>
+                  <div class="month">Mar</div>
+                  <div class="year">2025</div>
+                </div>
+              </div>
+              <div class="article-content">
+                <span class="article-tag">Academic</span>
+                <h3>CBC Parent Information Evening — Thank You!</h3>
+                <p>We hosted a successful CBC briefing for Grade 4–6 parents last Friday. Over 120 parents attended to learn about the Competency Based Curriculum, assessment changes, and how to support their children at home. Presentation slides are now available at the school office upon request.</p>
+                <a href="#" class="card-link" data-i18n="news.readmore">Read more <i class="fas fa-arrow-right"></i></a>
+              </div>
+            </article>
+
+            <article class="news-article">
+              <div class="article-date-col">
+                <div class="article-date-badge">
+                  <div class="day">1</div>
+                  <div class="month">Mar</div>
+                  <div class="year">2025</div>
+                </div>
+              </div>
+              <div class="article-content">
+                <span class="article-tag">Admissions</span>
+                <h3>2025 Intake — Applications Now Open</h3>
+                <p>We are pleased to announce that applications for the 2025 academic year are now open for Pre-Primary (PP1 &amp; PP2), and Grade 1. Limited spaces are available. Visit the school office or our Admissions page to apply. Early application is strongly advised.</p>
+                <a href="admissions.html" class="card-link" data-i18n="news.readmore">Read more <i class="fas fa-arrow-right"></i></a>
+              </div>
+            </article>
+
+          </div><!-- /news articles -->
+
+          <!-- SIDEBAR -->
+          <aside>
+            <!-- Term Calendar -->
+            <div class="sidebar-box">
+              <h3><i class="fas fa-calendar-alt"></i> <span data-i18n="news_page.calendar.heading">School Calendar 2025</span></h3>
+              <div class="table-wrap" style="box-shadow:none; border-radius:var(--radius);">
+                <table>
+                  <thead>
+                    <tr>
+                      <th data-i18n="news_page.calendar.term">Term</th>
+                      <th data-i18n="news_page.calendar.opens">Opens</th>
+                      <th data-i18n="news_page.calendar.closes">Closes</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><strong>Term 1</strong></td>
+                      <td>6 Jan</td>
+                      <td>4 Apr</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Term 2</strong></td>
+                      <td>28 Apr</td>
+                      <td>25 Jul</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Term 3</strong></td>
+                      <td>18 Aug</td>
+                      <td>7 Nov</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- Upcoming Events -->
+            <div class="sidebar-box">
+              <h3><i class="fas fa-calendar-check"></i> <span data-i18n="news_page.events.heading">Upcoming Events</span></h3>
+              <div class="event-item">
+                <div class="event-date-badge">
+                  <span class="day">28</span>
+                  <span class="month">Apr</span>
+                </div>
+                <div class="event-info">
+                  <h4>Term 2 Opening Day</h4>
+                  <p>All learners report by 7:30 AM</p>
+                </div>
+              </div>
+              <div class="event-item">
+                <div class="event-date-badge">
+                  <span class="day">16</span>
+                  <span class="month">May</span>
+                </div>
+                <div class="event-info">
+                  <h4>Parent-Teacher Meeting</h4>
+                  <p>Grades 4–9, 4:00 PM – 6:00 PM</p>
+                </div>
+              </div>
+              <div class="event-item">
+                <div class="event-date-badge">
+                  <span class="day">6</span>
+                  <span class="month">Jun</span>
+                </div>
+                <div class="event-info">
+                  <h4>School Science Fair</h4>
+                  <p>Open to public — all grades</p>
+                </div>
+              </div>
+              <div class="event-item">
+                <div class="event-date-badge">
+                  <span class="day">25</span>
+                  <span class="month">Jul</span>
+                </div>
+                <div class="event-info">
+                  <h4>Term 2 Closing Day</h4>
+                  <p>Mid-year reports issued</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="sidebar-box">
+              <h3><i class="fas fa-link"></i> Quick Links</h3>
+              <ul style="display:flex;flex-direction:column;gap:0.5rem;">
+                <li><a href="admissions.html" style="display:flex;align-items:center;gap:0.5rem;font-size:0.9rem;color:var(--primary-deeper);"><i class="fas fa-user-plus" style="width:16px;color:var(--primary-dark);"></i> <span data-i18n="nav.admissions">Admissions</span></a></li>
+                <li><a href="curriculum.html" style="display:flex;align-items:center;gap:0.5rem;font-size:0.9rem;color:var(--primary-deeper);"><i class="fas fa-book" style="width:16px;color:var(--primary-dark);"></i> <span data-i18n="nav.curriculum">Curriculum</span></a></li>
+                <li><a href="contact.html" style="display:flex;align-items:center;gap:0.5rem;font-size:0.9rem;color:var(--primary-deeper);"><i class="fas fa-phone" style="width:16px;color:var(--primary-dark);"></i> <span data-i18n="nav.contact">Contact Us</span></a></li>
+              </ul>
+            </div>
+          </aside>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="school-name-footer">WEKAN KASARANI SCHOOL, MWIKI</div>
+          <p data-i18n="footer.about">Quality CBC education for learners in Mwiki, Kasarani, Nairobi.</p>
+          <div class="social-links">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter/X"><i class="fab fa-x-twitter"></i></a>
+            <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer.quicklinks">Quick Links</h4>
+          <ul>
+            <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+            <li><a href="news.html" data-i18n="nav.news">News &amp; Calendar</a></li>
+            <li><a href="admissions.html" data-i18n="nav.admissions">Admissions</a></li>
+            <li><a href="curriculum.html" data-i18n="nav.curriculum">Curriculum</a></li>
+            <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer.contact">Contact</h4>
+          <div class="footer-contact-item"><i class="fas fa-map-marker-alt"></i><span>Mwiki Road, Kasarani, Nairobi</span></div>
+          <div class="footer-contact-item"><i class="fas fa-phone"></i><span>+254 700 000 000</span></div>
+          <div class="footer-contact-item"><i class="fas fa-envelope"></i><span>info@wekankasarani.sc.ke</span></div>
+        </div>
+        <div class="footer-col">
+          <h4>Office Hours</h4>
+          <div class="footer-contact-item"><i class="fas fa-clock"></i><span>Mon–Fri: 7:00 AM – 5:00 PM</span></div>
+          <div class="footer-contact-item"><i class="fas fa-clock"></i><span>Sat: 8:00 AM – 12:00 PM</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p data-i18n="footer.copyright">© 2025 Wekan Kasarani School, Mwiki. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/i18n.js"></script>
+</body>
+</html>
