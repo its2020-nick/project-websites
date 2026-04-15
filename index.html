@@ -19,35 +19,63 @@
       min-height: 88vh;
       display: flex;
       align-items: center;
-      background: linear-gradient(135deg, var(--bg-dark) 0%, #2e1e00 60%, #1a1200 100%);
       overflow: hidden;
+      background-color: var(--bg-dark);
     }
 
+    /* Full-bleed photo layer */
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('images/students/image6.jpeg');
+      background-size: cover;
+      background-position: center 30%;
+      background-repeat: no-repeat;
+      transform: scale(1.04);
+      transition: transform 8s ease;
+      will-change: transform;
+    }
+    .hero:hover .hero-bg,
+    .hero.loaded .hero-bg {
+      transform: scale(1);
+    }
+
+    /* Smooth multi-stop overlay: dark left + gradient fade right */
     .hero::before {
       content: '';
       position: absolute;
       inset: 0;
-      background: radial-gradient(ellipse at 30% 50%, rgba(255,215,0,0.13) 0%, transparent 65%),
-                  radial-gradient(ellipse at 80% 20%, rgba(255,215,0,0.07) 0%, transparent 50%);
+      background:
+        linear-gradient(
+          105deg,
+          rgba(10, 8, 0, 0.82) 0%,
+          rgba(26, 18, 0, 0.72) 45%,
+          rgba(26, 18, 0, 0.35) 100%
+        ),
+        linear-gradient(
+          to bottom,
+          rgba(0,0,0,0.25) 0%,
+          rgba(0,0,0,0)     40%,
+          rgba(0,0,0,0.45)  100%
+        );
       pointer-events: none;
+      z-index: 1;
     }
 
-    /* Decorative circles */
+    /* Subtle gold accent glow */
     .hero::after {
       content: '';
       position: absolute;
-      width: 500px;
-      height: 500px;
-      border-radius: 50%;
-      border: 2px solid rgba(255,215,0,0.07);
-      right: -100px;
-      top: -100px;
+      inset: 0;
+      background: radial-gradient(ellipse at 20% 60%, rgba(255,215,0,0.10) 0%, transparent 55%);
+      pointer-events: none;
+      z-index: 1;
     }
 
     .hero-content {
       position: relative;
       z-index: 2;
-      max-width: 700px;
+      max-width: 680px;
     }
 
     .hero-badge {
@@ -68,21 +96,24 @@
     }
 
     .hero h1 {
-      color: var(--text-light);
+      color: #ffffff;
       font-size: clamp(2rem, 5.5vw, 3.5rem);
       margin-bottom: 0.3rem;
       line-height: 1.15;
+      text-shadow: 0 2px 18px rgba(0,0,0,0.5);
     }
 
     .hero h1 span {
       color: var(--primary);
+      text-shadow: 0 2px 24px rgba(255,215,0,0.35);
     }
 
     .hero-subtitle {
       font-size: clamp(1rem, 2.5vw, 1.3rem);
-      color: rgba(255,255,255,0.75);
+      color: rgba(255,255,255,0.88);
       margin-bottom: 2.2rem;
       font-style: italic;
+      text-shadow: 0 1px 8px rgba(0,0,0,0.4);
     }
 
     .hero-actions {
@@ -168,13 +199,16 @@
       width: 52px;
       height: 52px;
       border-radius: 50%;
-      background: var(--primary);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.3rem;
-      color: var(--bg-dark);
+      overflow: hidden;
+      border: 2px solid var(--primary);
       flex-shrink: 0;
+    }
+
+    .signature-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
 
     .signature-info .name {
@@ -244,7 +278,8 @@
   <main>
 
     <!-- ==================== HERO ==================== -->
-    <section class="hero" aria-label="Hero section">
+    <section class="hero" aria-label="Hero section" id="hero-section">
+      <div class="hero-bg" aria-hidden="true"></div>
       <div class="container">
         <div class="hero-content">
           <div class="hero-badge">
@@ -296,10 +331,7 @@
       <div class="container">
         <div class="welcome-grid">
           <div class="welcome-image-wrap">
-            <div class="welcome-placeholder">
-              <i class="fas fa-school"></i>
-              <p>School Building</p>
-            </div>
+            <img src="images/students/image1.jpeg" alt="Wekan Kasarani School Building" />
             <div class="welcome-badge">
               <div>20+ Years</div>
               <div>of Excellence</div>
@@ -308,7 +340,7 @@
           <div class="welcome-text">
             <div class="section-heading" style="text-align:left; margin-bottom:1.5rem;">
               <h2 id="welcome-heading" data-i18n="welcome.heading">Welcome to Wekan Kasarani School</h2>
-              <p data-i18n="welcome.subheading" style="margin-top:0.4rem; color:#888; font-style:italic;">A message from our Head Teacher</p>
+              <p data-i18n="welcome.subheading" style="margin-top:0.4rem; color:#888; font-style:italic;">A message from our Directorr</p>
               <div class="underline" style="margin:0.5rem 0 0;"></div>
             </div>
             <blockquote>
@@ -316,11 +348,11 @@
             </blockquote>
             <div class="welcome-signature">
               <div class="signature-avatar">
-                <i class="fas fa-user-tie"></i>
+                <img src="images/image32.png" alt="Mrs. Nthurima — Director" />
               </div>
               <div class="signature-info">
-                <div class="name">Mrs. J. Wanjiku</div>
-                <div class="title" data-i18n="welcome.signature">Head Teacher, Wekan Kasarani School</div>
+                <div class="name">Mrs.Nthurima</div>
+                <div class="title" data-i18n="welcome.signature">Director, Wekan Kasarani School</div>
               </div>
             </div>
           </div>
@@ -347,7 +379,7 @@
             </div>
           </article>
           <article class="card">
-            <div class="card-img-placeholder"><i class="fas fa-trophy"></i></div>
+            <img src="images/students/image13.jpeg" alt="Interclass Sports Day" class="card-img" />
             <div class="card-body">
               <div class="card-meta"><i class="fas fa-calendar-alt"></i> 22 March 2025</div>
               <h3>Interclass Sports Day — Results</h3>
@@ -356,7 +388,7 @@
             </div>
           </article>
           <article class="card">
-            <div class="card-img-placeholder"><i class="fas fa-book-open"></i></div>
+            <img src="images/students/image9.jpeg" alt="CBC Parent Information Evening" class="card-img" />
             <div class="card-body">
               <div class="card-meta"><i class="fas fa-calendar-alt"></i> 10 March 2025</div>
               <h3>CBC Parent Information Evening</h3>
@@ -425,7 +457,10 @@
             <div class="gallery-placeholder"><i class="fas fa-flask"></i><span>Science</span></div>
           </div>
           <div class="gallery-item">
-            <div class="gallery-placeholder"><i class="fas fa-music"></i><span>Arts &amp; Music</span></div>
+            <img src="images/students/image2.jpeg" alt="Arts and Music" />
+          </div>
+          <div class="gallery-item">
+            <img src="images/students/image3.jpeg" alt="Arts and Music" />
           </div>
         </div>
       </div>
@@ -494,5 +529,12 @@
 
   <script src="js/main.js"></script>
   <script src="js/i18n.js"></script>
+  <script>
+    // Trigger smooth Ken Burns zoom-out on hero image after load
+    window.addEventListener('load', function () {
+      var hero = document.getElementById('hero-section');
+      if (hero) hero.classList.add('loaded');
+    });
+  </script>
 </body>
 </html>
