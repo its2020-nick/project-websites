@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Wekan Kasarani School Daycare and support for Kids with Autism — a safe, nurturing environment for every child." />
+  <title>Daycare &amp; Autism Support — Wekan Kasarani School, Mwiki</title>
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    .service-card {
+      background: #fff;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+      padding: 2rem;
+      border-top: 4px solid var(--primary);
+      text-align: center;
+    }
+    .service-icon {
+      width: 64px;
+      height: 64px;
+      background: var(--accent);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.25rem;
+      color: var(--primary-deeper);
+      font-size: 1.6rem;
+    }
+    .service-card h3 {
+      margin-bottom: 0.75rem;
+      color: var(--primary-deeper);
+    }
+    .service-card p {
+      color: #555;
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+    .feature-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .feature-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      padding: 0.6rem 0;
+      border-bottom: 1px solid var(--border-color);
+      font-size: 0.95rem;
+      color: #444;
+    }
+    .feature-list li:last-child { border-bottom: none; }
+    .feature-list li i {
+      color: var(--primary-deeper);
+      margin-top: 0.2rem;
+      flex-shrink: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <a href="index.html" class="nav-logo" aria-label="Wekan Kasarani School home">
+        <img src="images/logo.jpg" alt="Wekan Kasarani School logo" width="56" height="56" style="border-radius:50%;object-fit:cover;border:2px solid var(--primary);flex-shrink:0;" />
+        <div class="nav-logo-text">
+          <span class="school-name">WEKAN KASARANI</span>
+          <span class="school-sub">SCHOOL, MWIKI</span>
+        </div>
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+        <li><a href="news.html" data-i18n="nav.news">News &amp; Calendar</a></li>
+        <li><a href="admissions.html" data-i18n="nav.admissions">Admissions</a></li>
+        <li><a href="curriculum.html" data-i18n="nav.curriculum">Curriculum</a></li>
+        <li><a href="daycare.html" class="active" data-i18n="nav.daycare">Daycare &amp; Autism</a></li>
+        <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
+      </ul>
+      <div class="nav-right">
+        <div class="lang-toggle" role="group" aria-label="Language selector">
+          <button data-lang-btn="en" class="active">EN</button>
+          <button data-lang-btn="sw">SW</button>
+        </div>
+        <button class="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-nav">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="mobile-nav" id="mobile-nav">
+    <a href="index.html" data-i18n="nav.home">Home</a>
+    <a href="news.html" data-i18n="nav.news">News &amp; Calendar</a>
+    <a href="admissions.html" data-i18n="nav.admissions">Admissions</a>
+    <a href="curriculum.html" data-i18n="nav.curriculum">Curriculum</a>
+    <a href="daycare.html" class="active" data-i18n="nav.daycare">Daycare &amp; Autism</a>
+    <a href="contact.html" data-i18n="nav.contact">Contact</a>
+    <div class="mobile-lang">
+      <button data-lang-btn="en" class="active">English</button>
+      <button data-lang-btn="sw">Kiswahili</button>
+    </div>
+  </div>
+
+  <main>
+    <!-- PAGE HERO -->
+    <div class="page-hero">
+      <div class="container">
+        <h1>Daycare &amp; Kids with Autism</h1>
+        <p>A safe, loving, and inclusive space for every child to thrive</p>
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html" data-i18n="nav.home">Home</a>
+          <span><i class="fas fa-chevron-right" style="font-size:0.7rem;"></i></span>
+          <span>Daycare &amp; Autism</span>
+        </nav>
+      </div>
+    </div>
+
+    <!-- INTRO -->
+    <section class="section section--alt">
+      <div class="container">
+        <div class="alert alert-info">
+          <i class="fas fa-info-circle"></i>
+          <span>At Wekan Kasarani School, we believe every child deserves a nurturing start. Our Daycare programme and dedicated Autism Support unit provide specialised care and early learning in a warm, inclusive environment.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="section" aria-labelledby="services-heading">
+      <div class="container">
+        <div class="section-heading">
+          <h2 id="services-heading">Our Programmes</h2>
+          <div class="underline"></div>
+          <p>Tailored support for every child's unique journey</p>
+        </div>
+        <div class="cards-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
+          <div class="service-card">
+            <div class="service-icon"><i class="fas fa-baby"></i></div>
+            <h3>Daycare Programme</h3>
+            <p>Our full-day and half-day daycare provides a safe, stimulating environment for children from 6 months to 4 years. Qualified caregivers ensure each child receives the attention and early stimulation they need to grow and flourish.</p>
+          </div>
+          <div class="service-card" style="border-top-color: var(--primary-dark);">
+            <div class="service-icon"><i class="fas fa-puzzle-piece"></i></div>
+            <h3>Autism Support Unit</h3>
+            <p>Our inclusive Autism Support Unit is staffed by trained special needs educators who use evidence-based approaches — including structured teaching, sensory integration, and play therapy — to support learners on the autism spectrum.</p>
+          </div>
+          <div class="service-card" style="border-top-color: #4caf50;">
+            <div class="service-icon"><i class="fas fa-users"></i></div>
+            <h3>Parent &amp; Family Support</h3>
+            <p>We partner closely with families through regular consultations, progress reports, and workshops to ensure continuity of care between school and home.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DAYCARE FEATURES -->
+    <section class="section section--alt" aria-labelledby="daycare-features-heading">
+      <div class="container">
+        <div class="section-heading">
+          <h2 id="daycare-features-heading">Daycare Features</h2>
+          <div class="underline"></div>
+        </div>
+        <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+          <div style="background:#fff; border-radius:var(--radius-lg); padding:1.75rem; box-shadow:var(--shadow);">
+            <ul class="feature-list">
+              <li><i class="fas fa-check-circle"></i> Full-day (7:00 AM – 5:00 PM) and half-day options</li>
+              <li><i class="fas fa-check-circle"></i> Qualified early childhood caregivers</li>
+              <li><i class="fas fa-check-circle"></i> Nutritious snacks and meals provided</li>
+              <li><i class="fas fa-check-circle"></i> Age-appropriate play and learning activities</li>
+              <li><i class="fas fa-check-circle"></i> Safe, child-proofed indoor and outdoor spaces</li>
+              <li><i class="fas fa-check-circle"></i> Daily routine with structured rest periods</li>
+            </ul>
+          </div>
+          <div style="background:#fff; border-radius:var(--radius-lg); padding:1.75rem; box-shadow:var(--shadow);">
+            <ul class="feature-list">
+              <li><i class="fas fa-check-circle"></i> Regular developmental progress updates to parents</li>
+              <li><i class="fas fa-check-circle"></i> Low child-to-caregiver ratio for personalised attention</li>
+              <li><i class="fas fa-check-circle"></i> Smooth transition support into PP1</li>
+              <li><i class="fas fa-check-circle"></i> Sensory play corners and reading nooks</li>
+              <li><i class="fas fa-check-circle"></i> Music, art, and movement sessions</li>
+              <li><i class="fas fa-check-circle"></i> CCTV-monitored classrooms for child safety</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AUTISM SUPPORT -->
+    <section class="section" aria-labelledby="autism-heading">
+      <div class="container">
+        <div class="section-heading">
+          <h2 id="autism-heading">Autism Support Approach</h2>
+          <div class="underline"></div>
+          <p>Inclusive education that celebrates every learner</p>
+        </div>
+        <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem;">
+          <div class="service-card" style="border-top-color: var(--primary-dark);">
+            <div class="service-icon" style="font-size:1.3rem;"><i class="fas fa-brain"></i></div>
+            <h3>Structured Teaching</h3>
+            <p>Clear, consistent routines and visual supports help learners understand expectations and build independence.</p>
+          </div>
+          <div class="service-card" style="border-top-color: var(--primary-dark);">
+            <div class="service-icon" style="font-size:1.3rem;"><i class="fas fa-hand-sparkles"></i></div>
+            <h3>Sensory Integration</h3>
+            <p>Tailored sensory activities help children regulate their responses to the environment and improve focus.</p>
+          </div>
+          <div class="service-card" style="border-top-color: var(--primary-dark);">
+            <div class="service-icon" style="font-size:1.3rem;"><i class="fas fa-comments"></i></div>
+            <h3>Communication Support</h3>
+            <p>We use speech therapy techniques and augmentative communication tools to support verbal and non-verbal learners.</p>
+          </div>
+          <div class="service-card" style="border-top-color: var(--primary-dark);">
+            <div class="service-icon" style="font-size:1.3rem;"><i class="fas fa-child"></i></div>
+            <h3>Social Skills Development</h3>
+            <p>Group activities and peer inclusion programmes help learners build friendships and social confidence.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section section--alt">
+      <div class="container" style="text-align:center; max-width:600px;">
+        <h2 style="margin-bottom:1rem;">Ready to Enrol Your Child?</h2>
+        <p style="color:#555; margin-bottom:1.75rem;">Contact us today to learn more about our Daycare programme or Autism Support Unit and to arrange a visit.</p>
+        <a href="contact.html" class="btn btn-primary">
+          <i class="fas fa-envelope"></i> Contact Us
+        </a>
+        &nbsp;
+        <a href="admissions.html" class="btn btn-outline">
+          <i class="fas fa-user-plus"></i> Admissions Info
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="school-name-footer">WEKAN KASARANI SCHOOL, MWIKI</div>
+          <p data-i18n="footer.about">Quality CBC education for learners in Mwiki, Kasarani, Nairobi.</p>
+          <div class="social-links">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter/X"><i class="fab fa-x-twitter"></i></a>
+            <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer.quicklinks">Quick Links</h4>
+          <ul>
+            <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+            <li><a href="news.html" data-i18n="nav.news">News &amp; Calendar</a></li>
+            <li><a href="admissions.html" data-i18n="nav.admissions">Admissions</a></li>
+            <li><a href="curriculum.html" data-i18n="nav.curriculum">Curriculum</a></li>
+            <li><a href="daycare.html" data-i18n="nav.daycare">Daycare &amp; Autism</a></li>
+            <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer.contact">Contact</h4>
+          <div class="footer-contact-item"><i class="fas fa-map-marker-alt"></i><span>Mwiki Road, Kasarani, Nairobi, Kenya</span></div>
+          <div class="footer-contact-item"><i class="fas fa-phone"></i><span>+254 700 000 000</span></div>
+          <div class="footer-contact-item"><i class="fas fa-envelope"></i><span>info@wekankasarani.sc.ke</span></div>
+        </div>
+        <div class="footer-col">
+          <h4>Office Hours</h4>
+          <div class="footer-contact-item"><i class="fas fa-clock"></i><span>Mon–Fri: 7:00 AM – 5:00 PM</span></div>
+          <div class="footer-contact-item"><i class="fas fa-clock"></i><span>Sat: 8:00 AM – 12:00 PM</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p data-i18n="footer.copyright">© 2025 Wekan Kasarani School, Mwiki. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/i18n.js"></script>
+</body>
+</html>

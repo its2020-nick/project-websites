@@ -3,10 +3,11 @@
   "nav.news": "Habari &amp; Kalenda",
   "nav.admissions": "Usajili",
   "nav.curriculum": "Mtaala",
+  "nav.daycare": "Huduma ya Watoto &amp; Ugonjwa wa Akili",
   "nav.contact": "Mawasiliano",
 
   "hero.title": "Shule ya Wekan Kasarani, Mwiki",
-  "hero.subtitle": "Kukuza Ubora, Kujenga Tabia",
+  "hero.subtitle": "Bounce With Knowledge",
   "hero.cta": "Omba Sasa",
   "hero.learnmore": "Jifunze Zaidi",
 
@@ -15,10 +16,15 @@
   "stats.established": "Mwaka wa Kuanzishwa",
   "stats.levels": "Viwango vya Kujifunza",
 
+  "mission.heading": "Dhamira Yetu",
+  "mission.body": "Kutoa Elimu Bora kwa Ukuaji Kamili wa Mtoto",
+  "vision.heading": "Maono Yetu",
+  "vision.body": "Kutumia vipaji vya asili vya kila mwanafunzi kwa maisha bora",
+
   "welcome.heading": "Karibu Shule ya Wekan Kasarani",
-  "welcome.subheading": "Ujumbe kutoka kwa Mkuu wa Shule",
+  "welcome.subheading": "Ujumbe kutoka kwa Mkurugenzi",
   "welcome.body": "Katika Shule ya Wekan Kasarani, tunaamini kila mtoto ana uwezo wa kufanikiwa. Iliyopo katikati ya Mwiki, Kasarani, shule yetu inatoa mazingira mazuri ambapo ubora wa masomo unakutana na ukuaji wa tabia nzuri. Timu yetu ya walimu waliojitoa inafanya kazi kwa bidii kufungua vipawa vya kipekee kwa kila mwanafunzi. Tunajivunia kutoa elimu bora kupitia Mtaala wa Msingi wa Ustadi (CBC) wa Kenya, kuwaandaa wanafunzi wetu kwa changamoto na fursa za karne ya 21.",
-  "welcome.signature": "Mkuu wa Shule, Shule ya Wekan Kasarani",
+  "welcome.signature": "Mkurugenzi, Shule ya Wekan Kasarani",
 
   "news.heading": "Habari za Hivi Karibuni",
   "news.subheading": "Endelea kupata habari za shule",
@@ -34,6 +40,14 @@
   "values.community.desc": "Tunakuza mazingira ya familia ya karibu na ya kujumuisha kwa wote.",
   "values.innovation": "Uvumbuzi",
   "values.innovation.desc": "Tunakubali mbinu za kisasa za kujifunza zinazooana na CBC.",
+  "values.love": "Upendo",
+  "values.love.desc": "Tunakuza mazingira ya upendo ambapo kila mwanafunzi anahisi kuthaminiwa.",
+  "values.patience": "Uvumilivu",
+  "values.patience.desc": "Tunashughulikia kila mwanafunzi kwa uvumilivu, tukielewa kasi ya kipekee ya kila mtoto.",
+  "values.humility": "Unyenyekevu",
+  "values.humility.desc": "Tunakuza mioyo ya unyenyekevu inayowazi kujifunza na kukua pamoja.",
+  "values.care": "Huduma",
+  "values.care.desc": "Tunajali sana ustawi wa kila mtoto, familia, na mwanachama wa wafanyikazi.",
 
   "gallery.heading": "Maisha ya Shule",
   "gallery.subheading": "Mtazamo wa jamii yetu ya kujifunza inayostawi",

@@ -3,10 +3,11 @@
   "nav.news": "News &amp; Calendar",
   "nav.admissions": "Admissions",
   "nav.curriculum": "Curriculum",
+  "nav.daycare": "Daycare &amp; Autism",
   "nav.contact": "Contact",
 
   "hero.title": "Wekan Kasarani School, Mwiki",
-  "hero.subtitle": "Nurturing Excellence, Building Character",
+  "hero.subtitle": "Bounce With Knowledge",
   "hero.cta": "Apply Now",
   "hero.learnmore": "Learn More",
 
@@ -15,16 +16,21 @@
   "stats.established": "Est. Year",
   "stats.levels": "Learning Levels",
 
+  "mission.heading": "Our Mission",
+  "mission.body": "To Provide Quality Learning For Holistic Kid's Development",
+  "vision.heading": "Our Vision",
+  "vision.body": "To Harness the inherent talent of individual learner for quality life",
+
   "welcome.heading": "Welcome to Wekan Kasarani School",
-  "welcome.subheading": "A message from our Head Teacher",
+  "welcome.subheading": "A message from our Director",
   "welcome.body": "At Wekan Kasarani School, we believe every child has the potential to excel. Nestled in the heart of Mwiki, Kasarani, our school provides a nurturing environment where academic excellence meets holistic character development. Our dedicated team of educators works tirelessly to unlock the unique gifts in every learner. We are proud to offer quality education through Kenya's Competency Based Curriculum (CBC), preparing our pupils for the challenges and opportunities of the 21st century.",
-  "welcome.signature": "Head Teacher, Wekan Kasarani School",
+  "welcome.signature": "Director, Wekan Kasarani School",
 
   "news.heading": "Latest News",
   "news.subheading": "Stay up to date with school happenings",
   "news.readmore": "Read more",
 
-  "values.heading": "Our Core Values",
+  "values.heading": "Our Virtues",
   "values.subheading": "The principles that guide our learning community",
   "values.excellence": "Excellence",
   "values.excellence.desc": "We set high standards and inspire every learner to achieve their best.",
@@ -34,6 +40,14 @@
   "values.community.desc": "We foster a warm, inclusive family atmosphere for all.",
   "values.innovation": "Innovation",
   "values.innovation.desc": "We embrace modern learning approaches aligned with CBC.",
+  "values.love": "Love",
+  "values.love.desc": "We foster a loving environment where every learner feels valued and cared for.",
+  "values.patience": "Patience",
+  "values.patience.desc": "We approach every learner with patience, understanding each child's unique pace.",
+  "values.humility": "Humility",
+  "values.humility.desc": "We cultivate humble hearts that are open to learning and growing together.",
+  "values.care": "Care",
+  "values.care.desc": "We care deeply for the well-being of every child, family, and staff member.",
 
   "gallery.heading": "School Life",
   "gallery.subheading": "A glimpse into our vibrant learning community",
