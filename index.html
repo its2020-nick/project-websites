@@ -227,6 +227,49 @@
       .welcome-grid { grid-template-columns: 1fr; gap: 2rem; }
       .hero { min-height: 70vh; }
     }
+
+    /* ---- Arts gallery marquee ---- */
+    .gallery-item--marquee {
+      position: relative;
+      overflow: hidden;
+    }
+    .gallery-marquee {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+    .gallery-marquee-track {
+      display: flex;
+      height: 100%;
+      animation: gallery-slide 6s linear infinite;
+    }
+    .gallery-marquee-track img {
+      flex-shrink: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    @keyframes gallery-slide {
+      0%   { transform: translateX(0); }
+      45%  { transform: translateX(0); }
+      50%  { transform: translateX(-100%); }
+      95%  { transform: translateX(-100%); }
+      100% { transform: translateX(-200%); }
+    }
+    .gallery-marquee-label {
+      position: absolute;
+      bottom: 0.6rem;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0,0,0,0.55);
+      color: #fff;
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 0.25rem 0.75rem;
+      border-radius: 99px;
+      white-space: nowrap;
+      pointer-events: none;
+    }
   </style>
 </head>
 <body>
@@ -500,11 +543,16 @@
           <div class="gallery-item">
             <div class="gallery-placeholder"><i class="fas fa-flask"></i><span>Science</span></div>
           </div>
-          <div class="gallery-item">
-            <img src="images/students/image2.jpeg" alt="Arts and Music" />
-          </div>
-          <div class="gallery-item">
-            <img src="images/students/image3.jpeg" alt="Arts and Music" />
+          <div class="gallery-item gallery-item--marquee">
+            <div class="gallery-marquee">
+              <div class="gallery-marquee-track">
+                <img src="images/students/image2.jpeg" alt="Arts and Music" />
+                <img src="images/students/image3.jpeg" alt="Arts and Music" />
+                <img src="images/students/image2.jpeg" alt="Arts and Music" />
+                <img src="images/students/image3.jpeg" alt="Arts and Music" />
+              </div>
+            </div>
+            <span class="gallery-marquee-label">Arts &amp; Music</span>
           </div>
         </div>
       </div>
