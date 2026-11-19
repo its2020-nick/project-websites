@@ -209,7 +209,7 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ============================================================
      CLASSROOM SLIDESHOW
      ============================================================ */
-  ['classroom-slideshow', 'sports-slideshow', 'science-slideshow', 'arts-slideshow'].forEach(id => {
+  ['classroom-slideshow', 'sports-slideshow', 'science-slideshow', 'arts-slideshow', 'fieldday-slideshow'].forEach(id => {
     const el = document.getElementById(id);
     if (!el) return;
     const slides = el.querySelectorAll('.slideshow-img');

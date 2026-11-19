@@ -1,0 +1,11 @@
+# Force HTTPS for all visitors (Apache on Safaricom Business hosting)
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{HTTPS} off
+  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+</IfModule>
+
+# Tell browsers to always use HTTPS for this site (1 year)
+<IfModule mod_headers.c>
+  Header always set Strict-Transport-Security "max-age=31536000"
+</IfModule>
